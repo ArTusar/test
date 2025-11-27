@@ -1,0 +1,88 @@
+# step 1 functions
+
+def addd(x,y):
+ return x+y
+
+def subtact(x,y):
+    return x-y
+
+def multy(x,y):
+  return x*y
+
+def divv(x,y):
+    if y==0:
+        return "cant divide by zero :("
+    else:
+        return x/y
+
+
+# step 3 input check
+
+def getnum(msg):
+    ok = False
+    while ok == False:
+        try:
+            n = float(input(msg))
+            ok = True
+        except:
+            print("plz enter number!!!")
+    return n
+
+
+# class calculator
+class Calc:
+
+    def menu(self):
+        print("-----menu-----")
+        print("1 add")
+        print("2 minus")
+        print("3 multipli")
+        print("4 div")
+        print("5 exit")
+
+    def add(self,a,b):
+        return a+b
+
+    def sub(self,a,b):
+        return a-b
+
+    def mul(self,a,b):
+        return a*b
+
+    def div(self,a,b):
+        if b == 0:
+            return "no divide zero"
+        return a/b
+
+    def run(self):
+        r = True
+        while r:
+            self.menu()
+            ch = input("enter choise : ")
+
+            if ch == "5":
+                print("bye bye")
+                r = False
+            elif ch == "1":
+                a = getnum("num1: ")
+                b = getnum("num2: ")
+                print("ans =", self.add(a,b))
+            elif ch == "2":
+                a = getnum("num1: ")
+                b = getnum("num2: ")
+                print("ans =", self.sub(a,b))
+            elif ch == "3":
+                a = getnum("num1: ")
+                b = getnum("num2: ")
+                print("ans =", self.mul(a,b))
+            elif ch == "4":
+                a = getnum("num1: ")
+                b = getnum("num2: ")
+                print("ans =", self.div(a,b))
+            else:
+                print("wrong input try agen !!")
+
+
+# start
+c = Calc()
+c.run()
